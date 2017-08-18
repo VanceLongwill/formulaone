@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import { Sidebar } from './components/Sidebar';
 // import { ScrollableContent } from './components/ScrollableContent';
-import {Motion, spring} from 'react-motion';
+// import {Motion, spring} from 'react-motion'; yarn remove
 import Scroll from 'react-scroll'; // Imports all Mixins
 import { scroller } from 'react-scroll';
+
+import { ViewPager, Frame, Track, View } from 'react-view-pager';
+import uuid from 'react-native-uuid';
 
 import './css/Scroll.css';
 import './css/Main.css';
@@ -14,13 +17,28 @@ let Events     = Scroll.Events;
 let scroll     = Scroll.animateScroll;
 let scrollSpy  = Scroll.scrollSpy;
 
+const animations = [{
+  prop: 'scale',
+  stops: [
+    [-400, 0.2],
+    [0, 1],
+    [400, 0.2],
+  ],
+}, {
+  prop: 'opacity',
+  stops: [
+    [-200, 0.8],
+    [0, 1],
+    [200, 0.8],
+  ],
+}];
+
+
 export default class App extends Component {
   state = {
-    activeYear: '2005',
-    animateNow: false,
+    activeYear: 2010,
   }
   componentDidMount() {
-
     Events.scrollEvent.register('begin', function() {
       console.log("begin", arguments);
     });
@@ -29,55 +47,66 @@ export default class App extends Component {
       console.log("end", arguments);
     });
 
+    this.track.scrollTo(2010-2005);
+
     scrollSpy.update();
   }
 
   handleSetActive = (year) => {
-    this.setState({
-      activeYear: year,
-      animateNow: true,
-     });
-  }
+    console.log(year + " is the active year")
+   this.track.scrollTo(year-2005);
+     }
 
   render() {
     const years = Array.from(new Array(11), (x,i) => i + 2005);
     return (
       <div className="OuterContainer">
         <Sidebar>
+          <ViewPager id="viewPager">
+            <Frame id="frame" className="frame" accessibility={false}>
+              <Track
+                ref={
+                  (c) => { this.track = c; }
+                }
+                viewsToShow="11"
+                axis="y"
+                align={0.5}
+                animations={animations}
+                className="track track-y"
+              >
+                {
+                  years.map((year) =>{
+                      let yearAsString = ""+year;
+                    // let isActiveYear = (year === this.state.activeYear);
+                    // if (isActiveYear) {
+                    //   console.log(`${yearAsString} is the active year`);
+                    // }
+                    // let activeClass = (year==this.state.activeYear) ? "active": "notactive";
+                    return (
+                      <View className="view" key={year}>
+                        <Link
+                          activeClass="active"
+                          className="menu-item"
+                          name={yearAsString}
+                          id={yearAsString}
+                          to={yearAsString}
+                          spy={true}
+                          smooth={true}
+                          duration={500}
+                          offset={-50}
+                          onSetActive={this.handleSetActive}
+                          //containerId={'ScrollableContainer'}
+                        >
+                          {yearAsString}
+                        </Link>
+                      </View>
+                    );
+                  })
+                }
 
-          {
-            years.map((year) =>{
-              let yearAsString = ""+year;
-              // let isActiveYear = (year === this.state.activeYear);
-              // if (isActiveYear) {
-              //   console.log(`${yearAsString} is the active year`);
-              // }
-
-              return (
-
-
-                <Link
-                  activeClass="active"
-                  className="menu-item"
-                  name={yearAsString}
-                  id={yearAsString}
-                  to={yearAsString}
-                  spy={true}
-                  smooth={true}
-                  duration={500}
-                  offset={-50}
-                  onSetActive={this.handleSetActive}
-                  //containerId={'ScrollableContainer'}
-                  
-                >
-                  {yearAsString}
-                </Link>
-
-
-
-              );
-            })
-          }
+              </Track>
+            </Frame>
+          </ViewPager>
         </Sidebar>
         <div className="InnerContainer">
           {

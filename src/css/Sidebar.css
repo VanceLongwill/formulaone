@@ -26,8 +26,9 @@
 
 /* General sidebar styles */
 div.bm-menu-wrap div.bm-menu {
-  background: white;
-  padding: 2.5em 1.5em 0;
+  background: #d6d6d6;
+  padding: 0px;
+  margin: 0px;
   font-size: 1.15em;
 }
 
@@ -35,7 +36,7 @@ div.bm-menu-wrap div.bm-menu {
 /* Wrapper for item list */
 .bm-item-list {
   color: #b8b7ad;
-  padding: 0.8em;
+  padding: 0px;
 }
 
 /* Styling of overlay */
@@ -43,16 +44,61 @@ div.bm-menu-wrap div.bm-menu {
   background: transparent !important;
 }
 
+.bm-menu-wrap:after {
+      display: inline;
+      position: absolute;
+      content: "";
+      vertical-align: -50%;
+      top: 50vh;
+      left: 24vw;
+      margin-top: -2em;
+      width: 0;
+      height: 0;
+      border-right: 1em solid white;
+      border-bottom: 1em solid transparent;
+      border-top: 1em solid transparent;
+}
+
 /* styling of items in nav */
 a.menu-item {
   padding-top: 2vh;
   padding-bottom: 2vh;
+  font-size: 1.5em;
   text-align: center;
-  color: black;
+  color: white;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   -o-user-select: none;
   user-select: none;
+}
+
+.active {
+	color: black !important;
+  font-weight: bold;
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+	/*font-size: 2em !important;*/
+}
+/*
+.active:after {
+
+    display: inline;
+    position: absolute;
+    content: "";
+    vertical-align: -50%;
+    left: 23vw;
+    margin-top: -0.5em;
+    width: 0;
+    height: 0;
+    border-right: 1em solid white;
+    border-bottom: 1em solid transparent;
+    border-top: 1em solid transparent;
+}*/
+
+@media screen and (max-width: 760px) {
+    .active:after {
+      display: none;
+    }
 }

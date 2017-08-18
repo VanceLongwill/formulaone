@@ -4,6 +4,21 @@ import { scroller } from 'react-scroll'; //Imports scroller mixin, can use as sc
 //import './css/App.css';
 import '../css/Scroll.css';
 
+const animations = [{
+  prop: 'scale',
+  stops: [
+    [-200, 0.85],
+    [0, 1],
+    [200, 0.85],
+  ],
+}, {
+  prop: 'opacity',
+  stops: [
+    [-200, 0.15],
+    [0, 1],
+    [200, 0.15],
+  ],
+}];
 
 var durationFn = function(deltaTop) {
     return deltaTop;
@@ -15,6 +30,9 @@ let scroll     = Scroll.animateScroll;
 let scrollSpy  = Scroll.scrollSpy;
 
 export class ScrollableContent extends Component {
+  state = {
+    currentYear:  2010,
+  }
   componentDidMount() {
 
     Events.scrollEvent.register('begin', function() {

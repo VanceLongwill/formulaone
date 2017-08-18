@@ -36,7 +36,9 @@ div.bm-menu-wrap div.bm-menu {
 /* Wrapper for item list */
 .bm-item-list {
   color: #b8b7ad;
-  padding: 0px;
+  height: 80vh;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
 }
 
 /* Styling of overlay */
@@ -49,7 +51,7 @@ div.bm-menu-wrap div.bm-menu {
       position: absolute;
       content: "";
       vertical-align: -50%;
-      top: 50vh;
+      top: 48vh;
       left: 24vw;
       margin-top: -2em;
       width: 0;

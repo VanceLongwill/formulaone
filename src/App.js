@@ -17,21 +17,65 @@ let Events     = Scroll.Events;
 let scroll     = Scroll.animateScroll;
 let scrollSpy  = Scroll.scrollSpy;
 
-const animations = [{
+// const animations = [{
+//   prop: 'scale',
+//   stops: [
+//     [-400, 0.2],
+//     [0, 1],
+//     [400, 0.2],
+//   ],
+// }, {
+//   prop: 'opacity',
+//   stops: [
+//     [-200, 0.8],
+//     [0, 1],
+//     [200, 0.8],
+//   ],
+// }];
+const animations = [
+  {
   prop: 'scale',
   stops: [
-    [-400, 0.2],
+    [-450, 0.1],
     [0, 1],
-    [400, 0.2],
+    [450, 0.1],
   ],
-}, {
-  prop: 'opacity',
+},
+// {
+//   prop: 'opacity',
+//   stops: [
+//     [-200, 0.8],
+//     [0, 1],
+//     [200, 0.8],
+//   ],
+// },
+// {
+//   prop: 'backgroundColor',
+//   stops: [
+//     [-110, '#b4da55'],
+//     [0, '#2ea8ff'],
+//     [110, '#b4da55']
+//   ]
+// },
+{
+  prop: 'rotateX',
   stops: [
-    [-200, 0.8],
-    [0, 1],
-    [200, 0.8],
+    [-500, -175], // rotate slides to the left
+    [0, 0], // they'll be straight at center
+    [500, 175] // and rotated to the right
   ],
-}];
+},
+// {
+//   prop: 'rotateZ',
+//   stops: [
+//     [-500, -175], // rotate slides to the left
+//     [-50, -20],
+//     [0, 0], // they'll be straight at center
+//     [50, 20],
+//     [500, 175] // and rotated to the right
+//   ]
+// }
+];
 
 
 export default class App extends Component {
@@ -68,7 +112,7 @@ export default class App extends Component {
                 ref={
                   (c) => { this.track = c; }
                 }
-                viewsToShow="11"
+                viewsToShow="6"
                 axis="y"
                 align={0.5}
                 animations={animations}

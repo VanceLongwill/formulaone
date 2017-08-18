@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 import { push as Menu } from 'react-burger-menu';
-import {Motion, spring} from 'react-motion';
 import '../css/Sidebar.css';
 
 export class Sidebar extends Component {
-
+  // Add state + open and close menu functionality
   showSettings(event) {
     event.preventDefault();
   }
 
   render() {
-    const styles = {
+    const defaultStyles = {
       bmMenu: {
         overflow: 'none',
       }
@@ -23,7 +22,8 @@ export class Sidebar extends Component {
         width={'20%'}
         isOpen={true}
         customCrossIcon={false}
-        styles={styles}
+        customBurgerIcon={false}
+        styles={Object.assign({}, defaultStyles, this.props.styles)} // ES6 Object.assign for Immutability & to preserve the order of the css styles
       >
         { this.props.children }
       </Menu>

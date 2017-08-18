@@ -33,22 +33,24 @@ let scrollSpy  = Scroll.scrollSpy;
 //   ],
 // }];
 const animations = [
-  {
-  prop: 'scale',
-  stops: [
-    [-450, 0.1],
-    [0, 1],
-    [450, 0.1],
-  ],
-},
 // {
-//   prop: 'opacity',
+//   prop: 'scale',
 //   stops: [
-//     [-200, 0.8],
+//     [-500, 0.6],
 //     [0, 1],
-//     [200, 0.8],
+//     [500, 0.6],
 //   ],
 // },
+{
+  prop: 'opacity',
+  stops: [
+    [-300, 0.0],
+    [-200, 0.8],
+    [0, 1],
+    [200, 0.8],
+    [300, 0.0]
+  ],
+},
 // {
 //   prop: 'backgroundColor',
 //   stops: [
@@ -60,21 +62,21 @@ const animations = [
 {
   prop: 'rotateX',
   stops: [
-    [-500, -175], // rotate slides to the left
+    [-500, -120], // rotate slides to the left
     [0, 0], // they'll be straight at center
-    [500, 175] // and rotated to the right
+    [500, 120] // and rotated to the right
   ],
 },
-// {
-//   prop: 'rotateZ',
-//   stops: [
-//     [-500, -175], // rotate slides to the left
-//     [-50, -20],
-//     [0, 0], // they'll be straight at center
-//     [50, 20],
-//     [500, 175] // and rotated to the right
-//   ]
-// }
+{
+  prop: 'translateZ',
+  stops: [
+    [-500, -150],
+    // [-300, -36], // rotate slides to the left
+    [0, 20], // they'll be straight at center
+    // [300, 36], // and rotated to the right
+    [500, -150],
+  ]
+}
 ];
 
 
@@ -98,7 +100,7 @@ export default class App extends Component {
 
   handleSetActive = (year) => {
     console.log(year + " is the active year")
-   this.track.scrollTo(year-2005);
+      this.track.scrollTo(year-2005);
      }
 
   render() {
@@ -112,7 +114,7 @@ export default class App extends Component {
                 ref={
                   (c) => { this.track = c; }
                 }
-                viewsToShow="6"
+                viewsToShow="10"
                 axis="y"
                 align={0.5}
                 animations={animations}

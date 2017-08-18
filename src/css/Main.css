@@ -1,8 +1,16 @@
+:root {
+  --primary-light: #fff;
+  --primary-dark: #2D3142;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background: var(--primary-light);
 }
+
+
 .InnerContainer{
     margin-left: 28vw;
     padding-bottom: 200px;

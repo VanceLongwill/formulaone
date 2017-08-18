@@ -20,7 +20,7 @@ export class Sidebar extends Component {
         noOverlay
         pageWrapId={'InnerContainer'}
         outerContainerId={'OuterContainer'}
-        width={'25%'}
+        width={'20%'}
         isOpen={true}
         customCrossIcon={false}
         styles={styles}

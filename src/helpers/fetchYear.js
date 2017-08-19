@@ -2,7 +2,7 @@ export class fetchYear {
   constructor(year) {
     this.year = year;
     this.baseUrl = "http://ergast.com/api/f1/";
-    this.url =  this.baseUrl + this.year  + ".json" ;
+    this.url =  this.baseUrl + this.year ;
     console.log(this.url);
     // this.data = this.fetchData();
   // /  this.data  = this.fetchData();

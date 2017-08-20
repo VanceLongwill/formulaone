@@ -1,0 +1,51 @@
+
+.LoadingTable {
+height: 100%;
+width: 100%;
+/*background-color: var(--primary-dark);*/
+/*color: var(--primary-dark)*/
+}
+
+div.LoadingTable > div {
+  /*margin-top: 10%;*/
+  margin: 10% auto 10% auto;
+  height: 80%;
+  width: 60%;
+  /*position: relative;
+  top: 20%;
+  left: 20%;*/
+}
+
+div.LoadingTable > div > div{
+  height: 200px !important;
+  width: 200px !important;
+  display: block !important;
+  /*position: relative;*/
+  z-index: 2;
+  margin-top: -100px;
+  margin-left: -100px;
+  right: 50%;
+  margin: 0 auto;
+  color: var(--primary-dark);
+}
+div.loadingTable > table.pure-table.pure-table-striped{
+  z-index: -1;
+  width: 80%;
+  height: 60%;
+  position: relative;
+  top: 0px;
+  /* background-color: var(--primary-dark); */
+}
+tr {
+  width: 60%;
+}
+td {
+  width: 30%;
+  height: 5%;
+}
+thead > tr{
+  width: 60%;
+}
+thead th {
+  width: 30%;
+}

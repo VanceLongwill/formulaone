@@ -1,0 +1,52 @@
+table.pure-table.pure-table-striped{
+  width: 80%;
+  height: 60%;
+  margin: 0px auto;
+  /*background-color: var(--primary-dark);*/
+}
+
+tr {
+  width: 60%;
+}
+td {
+  width: 30%;
+  height: 5%;
+
+}
+thead {
+  padding: 10px;
+}
+thead > tr{
+  width: 60%;
+}
+thead th {
+  width: 30%;
+}
+/*
+.raceTable {
+  width: 100%;
+  margin: 0 auto;
+}*/
+
+.ui.grid>.row {
+  padding: 0.5vh !important;
+}
+
+.gridHeaders {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 2vh;
+}
+
+.champ {
+  background-color: var(--secondary-light) !important;
+}
+
+@media screen and (max-width: 800px){
+  /*.ui.grid>.row {
+    padding: 0 !important;
+  }*/
+  .column{
+    font-size: 0.8em;
+  }
+}

@@ -12,7 +12,7 @@ export const ScrollableLink = ({name , onSetActive}) => (
       spy={true}
       smooth={true}
       duration={500}
-      offset={-50}
+      offset={0}
       onSetActive={onSetActive}
       //containerId={'ScrollableContainer'}
     >

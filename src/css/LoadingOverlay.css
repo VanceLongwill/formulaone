@@ -1,0 +1,44 @@
+:root {
+  --primary-light: #fff;
+  --primary-dark: #2D3142;
+}
+
+.LoadingOverlay {
+height: 100vh;
+width: 100vw;
+background-color: var(--primary-light);
+color: var(--primary-dark)
+}
+
+div.LoadingOverlay > div {
+  /*margin-top: 10%;*/
+  margin: 10% auto 10% auto;
+  height: 80%;
+  width: 60%;
+}
+#message {
+  position: fixed;
+  font-size: 2em;
+  width: 400px;
+  top: 80%;
+  left: 50%;
+  margin-left: -200px;
+  right: 50%;
+  text-align: center;
+}
+div.LoadingOverlay >  p {
+
+}
+
+div.LoadingOverlay > div > div{
+  height: 200px !important;
+  width: 200px !important;
+  display: block !important;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -100px;
+  right: 50%;
+  /*margin: 0 auto;*/
+}

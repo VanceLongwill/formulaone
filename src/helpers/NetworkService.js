@@ -17,7 +17,7 @@ class NetworkService {
     return RequestService.getRequest(url)
   }
 
-  getWinners(){
+  getChampionsFromYearRange(yearRange){
     let yearsToFetch = 10
     let limit = yearsToFetch + 1;
     let firstDocumentedYear = 1950;

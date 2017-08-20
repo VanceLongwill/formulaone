@@ -1,3 +1,47 @@
+render() {
+  let { champions, yearRange, selectedYear } = this.props;
+  let  isFetching = false;
+  let  lastUpdated = "2015/06/06";
+
+  console.log("champs : " +champions);
+  const isEmpty = champions.length === 0;
+  return (
+
+    <div className="OuterContainer">
+      <Sidebar>
+        <ScrollableLinkList links={yearRange} activeYear={selectedYear} />
+      </Sidebar>
+      <div className="InnerContainer">
+
+          {/* {lastUpdated &&
+            <span>
+              Last updated at {new Date(lastUpdated).toLocaleTimeString()}.
+              {' '}
+            </span>
+            }
+            {!isFetching &&
+            <button onClick={this.handleRefreshClick}>
+              Refresh
+            </button>
+            }
+            </p>
+            {isEmpty
+            ? (isFetching ? <h2>Loading...</h2> : <h2>Empty.</h2>)
+            : <div style={{ opacity: isFetching ? 0.5 : 1 }}>
+            <ScrollableContentSectionList champions={champions} />
+            </div>
+          } */}
+
+        </div>
+      </div>
+  );
+}
+}
+
+
+
+
+
 {/* <ViewPager id="viewPager">
   <Frame id="frame" className="frame" accessibility={false}>
     <Track
@@ -84,3 +128,36 @@ const animations = [
 // Events.scrollEvent.register('end', function() {
 //   console.log("end", arguments);
 // });
+//
+
+// const FROM_YEAR = 2005;
+// const TO_YEAR = 2015;
+// const ACTIVE_YEAR = TO_YEAR-(Math.round((TO_YEAR-FROM_YEAR)/2)); // Sets active year to median value of the range of years
+// //
+// function generateChampionsDataShape() {
+//   return getArrayOfYears().map((year) => {
+//     return Object.assign({}, {
+//       season: year.toString(),
+//         DriverStandings: [
+//         {
+//           Driver: {
+//             givenName: "",
+//             familyName: "",
+//           }
+//         }
+//         ]
+//     });
+//   })
+// }
+// function getArrayOfYears () {
+//   return Array.from(new Array(TO_YEAR-FROM_YEAR+1), (x,i) => i + FROM_YEAR);
+// }
+//
+// const initialState = {
+//   activeYear: ACTIVE_YEAR,
+//   yearRange: [FROM_YEAR, TO_YEAR],
+//   races: [],
+//   championsData: generateChampionsDataShape(),
+// }
+
+// let store = store || initialState;

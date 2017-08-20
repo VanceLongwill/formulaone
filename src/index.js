@@ -4,7 +4,8 @@ import { Provider } from 'react-redux'
 import App from './containers/App'
 import configureStore from './configureStore';
 
- import 'semantic-ui-css/semantic.min.css'; // yarn remove
+// INCLUDED CDN IN public/index.html - no need to import from node_modules
+/* import 'semantic-ui-css/semantic.min.css'; */
 
 import registerServiceWorker from './registerServiceWorker';
 

@@ -24,6 +24,14 @@
 	height: 60vh;
 }
 
+p.lastUpdated {
+	text-align: center;
+	padding-top: 5px;
+}
+p.lastUpdated span{
+	color: var(--secondary-dark);
+}
+
 @media screen and (max-width: 900px){
 	.sectionHeader {
 		font-size: 1em;

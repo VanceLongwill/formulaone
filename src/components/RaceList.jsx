@@ -1,55 +1,12 @@
 import React, {Component} from 'react';
-import * as Table from 'reactabular-table';
-import '../css/RaceList.css';
-
-
 import { Grid } from 'semantic-ui-react';
-
-const columns = [
-  {
-    property: 'name',
-    header: {
-      label: 'Race',
-    }
-  },
-  {
-    property: 'winner',
-    header: {
-      label: 'Winner'
-    },
-    cell: {
-      formatters: [
-        winner => winner //===worldChampion ? `{winner} (world champion)` : winner
-      ]
-    }
-  },
-
-];
-
+import '../css/RaceList.css';
 
 export class RaceList extends Component {
   render(){
     let {races, worldChampion} = this.props;
-
-    // if (races.length===0) {
-    //   return(
-    //       <p>laoding</p>
-    //       )
-    // } else {
-    //
-    // }
-    console.log("Racelist - Champ: " + worldChampion);
     return(
-      // <Table.Provider
-      //   className="pure-table pure-table-striped"
-      //   columns={columns}
-      //
-      // >
-      //   <Table.Header />
-      //
-      //   <Table.Body rows={races} rowKey="name" />
-      // </Table.Provider>
-      //
+
       <Grid
         columns={2}
         //stackable={true}
@@ -83,19 +40,3 @@ export class RaceList extends Component {
     )
   }
 }
-
-// import Griddle, { plugins, RowDefinition, ColumnDefinition} from 'griddle-react'; yarn remove
-//
-// export const RaceList = ({ races }) => (
-//
-//    <Griddle
-//      data={races}
-//      plugins={[plugins.LocalPlugin]}
-//    >
-//      <RowDefinition>
-//        <ColumnDefinition id="name" title="Races"/>
-//        <ColumnDefinition id="winner" title="Winner"/>
-//      </RowDefinition>
-//    </Griddle>
-//
-// )

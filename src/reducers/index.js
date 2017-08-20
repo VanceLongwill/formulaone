@@ -14,26 +14,10 @@ import {
   STARTING_YEAR,
   ENDING_YEAR,
 } from '../config';
-//
-// const selectYear = (state = {
-//    DEFAULT_ACTIVE_YEAR
-// }, action) => {
-//   switch (action.type) {
-//     case SELECT_YEAR:
-//     console.log("IN REDUCER")
-//     console.log(action)
-//       return action.year
-//     default:
-//       return state
-//   }
-// }
-
 
 const selectedYear = (state = DEFAULT_ACTIVE_YEAR, action) => {
   switch (action.type) {
     case SELECT_YEAR:
-    console.log("IN REDUCER")
-    console.log(action)
       return action.year
     default:
       return state

@@ -34,7 +34,7 @@ const animations = [
   }
 ];
 
-export class ScrollableLinkList extends Component{
+export default class ScrollableLinkList extends Component{
   state = {
     activeLink: this.props.activeLink,
   }

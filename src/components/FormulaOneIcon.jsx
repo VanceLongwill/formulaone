@@ -1,7 +1,10 @@
 import React from 'react';
 import '../css/FormulaOneIcon.css';
-export const FormulaOneIcon = () => (
+
+const FormulaOneIcon = () => (
   <span id="FormulaOneIcon">
-    <img src="assets/F1_logo.svg" />
+    <img src="assets/F1_logo.svg" alt="F1" />
   </span>
-)
+);
+
+export default FormulaOneIcon;

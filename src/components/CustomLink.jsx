@@ -13,15 +13,11 @@ const animateScroll = Scroll.animateScroll;
 // I plan to submit a pull request for 'react-scroll' to add this prop as I think it's really useful
 // For now, it shows an error about prop types, which I have not yet updated to include the new prop
 
-class CustomLinkClass extends Component {
-  render() {
-    return (
-      <a {...this.props}>
-        {this.props.children}
-      </a>
-    );
-  }
-}
+const CustomLinkClass = ({ props, children }) => (
+  <a {...props} className="menu-item">
+    {children}
+  </a>
+);
 
 
 const customScroller = Object.assign({}, defaultScroller, {

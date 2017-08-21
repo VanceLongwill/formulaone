@@ -10,52 +10,30 @@ const ScrollableContentSectionList = ({ racesByYear, seasons }) => (
       seasons.map((season) => {
         const thisYearsRaces = racesByYear[season.year];
         let isEmpty = true;
+        let isFetching = false;
         if (thisYearsRaces) {
           isEmpty = thisYearsRaces.length === 0;
+          isFetching = thisYearsRaces.isFetching;
         }
         return (
-          isEmpty ?
+          isEmpty || isFetching ?
             <ScrollableContentSection
               key={`_${season.year}`}
               year={season.year}
               champion={`${season.worldChampion}`}
               content={<LoadingTable />}
-            />:
+            /> :
             <ScrollableContentSection
-            key={`_${season.year}`}
-            year={season.year}
-            champion={`${season.worldChampion}`}
-            content={
-              <RaceList
-                races={thisYearsRaces.items}
-                worldChampion={season.worldChampion}
-              />
-            }
-          />
-          //
-          // isEmpty ?
-        //   isFetching ?
-        //     <ScrollableContentSection
-        //       key={`_${season.year}`}
-        //       year={season.year}
-        //       champion={`${season.worldChampion}`}
-        //       content={<LoadingTable />}
-        //     />
-        //   :
-        //   <ScrollableContentSection
-        //     key={`_${season.year}`}
-        //     year={season.year}
-        //     champion={`${season.worldChampion}`}
-        //     content={<LoadingTable />}
-        //   />
-        // :
-        // <ScrollableContentSection
-        //   key={`_${season.year}`}
-        //   year={season.year}
-        //   lastUpdated={new Date(thisYearsRaces.lastUpdated).toLocaleString()}
-        //   champion={`${season.worldChampion}`}
-        //   content={<RaceList races={thisYearsRaces.items} worldChampion={season.worldChampion} />} //<RaceList races={racesByYear[season.year]} />
-        // />
+              key={`_${season.year}`}
+              year={season.year}
+              champion={`${season.worldChampion}`}
+              content={
+                <RaceList
+                  races={thisYearsRaces.items}
+                  worldChampion={season.worldChampion}
+                />
+              }
+            />
         );
       })
     }

@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { ScrollableLink } from './ScrollableLink';
-import Scroll from 'react-scroll';
 import { ViewPager, Frame, Track, View } from 'react-view-pager';
+import ScrollableLink from './ScrollableLink';
+import Scroll from 'react-scroll';
+
 
 let scroll = Scroll.animateScroll;
+
 // Define animation stops for scrollable years side component
 const animations = [
     {

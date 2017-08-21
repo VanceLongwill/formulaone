@@ -104,4 +104,4 @@ const customScroller = Object.assign({}, defaultScroller, {
   },
 });
 
-export const CustomLink = Helpers.Scroll(CustomLinkClass, customScroller);
+export default Helpers.Scroll(CustomLinkClass, customScroller);

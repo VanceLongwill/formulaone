@@ -44,13 +44,12 @@ Suggestions, improvements, and bug reports are more than welcome.
 * [halogen]() for animated loading components
 
 
-
-
-**Things I would like to do when I have time**
+**Things I would do with more time**
 
 * Add BEM naming convention for CSS or move CSS styles inline
 * Make use of browser [localStorage API](https://developer.mozilla.org/en/docs/Web/API/Window/localStorage) for data persistence
 * Clean up 
+* Add PropTypes for better testing / debugging
 
 ## How to install
 

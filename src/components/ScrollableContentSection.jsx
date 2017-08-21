@@ -4,7 +4,7 @@ import Scroll from 'react-scroll';
 import '../css/ScrollableContentSection.css';
 
 export const ScrollableContentSection = ({year, champion, content, lastUpdated}) => (
-    <Scroll.Element name={`${year}`} className="element" >
+    <Scroll.Element name={`${year}`} className="element">
       <div className="linkSection">
         <div className="sectionHeader">
           <b>
@@ -17,9 +17,9 @@ export const ScrollableContentSection = ({year, champion, content, lastUpdated})
             <p className="lastUpdated"><span>Updated: </span>{lastUpdated}</p>
           : null
         }
-        <div className="sectionContent">
+        <Scroll.Element className="sectionContent element" name={`${year}_content`}>
           {content}
-        </div>
+        </Scroll.Element>
 
 
       </div>

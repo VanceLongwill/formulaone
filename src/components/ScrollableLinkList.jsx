@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { ScrollableLink } from './ScrollableLink';
+import Scroll from 'react-scroll';
 import { ViewPager, Frame, Track, View } from 'react-view-pager';
 
+let scroll = Scroll.animateScroll;
 // Define animation stops for scrollable years side component
 const animations = [
     {
@@ -48,17 +50,23 @@ export class ScrollableLinkList extends Component{
     });
     //console.log("Set link to "+this.props.links[link[0]] );
     //this.props.onSelectLink(this.props.links[link[0]]);
+    // scroll.scrollMore(300)
   }
   handleSelectLink = (link) => {
-    //this.props.onSelectLink(link);
-    // this.setState({
-    //   activeYear: link,
-    // });
+   if (link !== undefined){
+
+     this.setState({
+       activeYear: link,
+     });
      this.track.scrollTo(this.props.links.indexOf(Number(link)));
+   }
   }
+
   // Fires props after animation settles
-  fireProps = (link) => {
-    this.props.onSelectLink(this.state.activeYear);
+  fireProps = () => {
+    if (this.state.activeYear!==undefined){
+      this.props.onSelectLink(this.state.activeYear);
+    }
   }
   render() {
     return (
@@ -78,7 +86,6 @@ export class ScrollableLinkList extends Component{
             className="track track-y"
             onRest={this.fireProps}
           >
-
             {
               this.props.links.map((link) =>{
                 return (

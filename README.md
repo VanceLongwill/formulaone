@@ -3,6 +3,10 @@
 
 [Formula One App](https://vancelongwill.github.io/formulaone/) *(live demo on GitHub pages)*
 
+**NOTE: Currently not working due to cross-origin request to API**
+
+`Mixed Content: The page at 'https://vancelongwill.github.io/formulaone/' was loaded over HTTPS, but requested an insecure resource 'http://ergast.com/api/f1/driverStandings/1.json?offset=55&limit=11'. This request has been blocked; the content must be served over HTTPS.`
+
 ---
 
 Suggestions, improvements, and bug reports are more than welcome. 
@@ -47,6 +51,22 @@ Suggestions, improvements, and bug reports are more than welcome.
 * Add BEM naming convention for CSS or move CSS styles inline
 * Make use of browser [localStorage API](https://developer.mozilla.org/en/docs/Web/API/Window/localStorage) for data persistence
 * Clean up 
+
+## How to install
+
+* Clone this repo
+
+`git clone https://github.com/VanceLongwill/formulaone.git` 
+
+* Install node modules
+
+`yarn install` or `npm install`
+
+* Start the server 
+
+`yarn start` or `npm run start`
+
+
 
 
 *Vance Longwill*

@@ -1,11 +1,19 @@
 span#FormulaOneIcon {
-  background-color: transparent;
   color: var(--primary-light);
   display: block;
   position: fixed;
   font-size: 10vh;
-  top: 10vh;
-  margin-left: -6vh;
+  top: -2vh;
+  margin-left: -8vw;
   text-align: center;
   left: 10%;
+  padding-top: 8vh;
+  padding-bottom: 8vh;
+  padding-left: 2vh;
+  padding-right: 2vh;
+}
+
+span#FormulaOneIcon img {
+  width: 14vw;
+  color: white;
 }

@@ -21,6 +21,11 @@ import '../css/Main.css';
 
 let scrollSpy  = Scroll.scrollSpy;
 let scroll = Scroll.animateScroll;
+// Or Access Link,Element,etc as follows
+let Link       = Scroll.Link;
+let Element    = Scroll.Element;
+let Events     = Scroll.Events;
+
 
 class App extends Component {
   static propTypes = {
@@ -44,6 +49,18 @@ class App extends Component {
 
 componentDidMount() {
   const { dispatch, selectedYear, selectedYearRange } = this.props
+  Events.scrollEvent.register('begin', function(to, element) {
+  console.log("begin", arguments);
+
+});
+
+
+Events.scrollEvent.register('end', function(to, element) {
+  console.log("end", arguments);
+
+});
+
+scrollSpy.update();
   // console.log('selected year');
   // console.log(selectedYear);
   dispatch(fetchChampionsIfNeeded(selectedYearRange))
@@ -52,6 +69,11 @@ componentDidMount() {
   dispatch(fetchRacesIfNeeded(selectedYear))
 }
 
+componentWillUnmount() {
+  // Removes scroll event listeners when components unmounts
+  Events.scrollEvent.remove('begin');
+  Events.scrollEvent.remove('end');
+}
 
 
   handleRefreshClick = e => {
@@ -63,8 +85,7 @@ componentDidMount() {
 }
 
 handleChange = nextYear => {
-  const { dispatch } = this.props
-
+  const { dispatch } = this.props;
   // console.log("IN HANDLE CHANGE")
   // console.log(nextYear);
   dispatch(selectYear(nextYear))
@@ -91,7 +112,12 @@ render() {
       <div className="OuterContainer" >
         <Sidebar>
           <FormulaOneIcon />
-          <ScrollableLinkList links={yearsArray} champions={champions} activeLink={selectedYear} onSelectLink={this.handleChange} />
+          <ScrollableLinkList
+            links={yearsArray}
+            champions={champions}
+            activeLink={selectedYear}
+            onSelectLink={this.handleChange}
+          />
         </Sidebar>
 
         <div className="InnerContainer" >

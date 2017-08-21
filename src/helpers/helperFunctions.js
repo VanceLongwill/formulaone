@@ -4,6 +4,7 @@ export const getArrayOfYears = (startYear, endYear) => {
   return Array.from(new Array(endYear-startYear+1), (x,i) => i + startYear);
 }
 
+// Error handling for failed fetch() API requests
 export const handleErrors = (response) => {
     if (!response.ok) {
         throw Error(response.statusText);

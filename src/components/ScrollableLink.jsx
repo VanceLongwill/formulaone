@@ -1,8 +1,5 @@
 import React from 'react';
-// import Scroll from 'react-scroll';
 import CustomLink from './CustomLink';
-
-// let scroller = Scroll.animateScroll;
 
 const ScrollableLink = ({ name, onSetActive }) => (
   <CustomLink
@@ -17,6 +14,7 @@ const ScrollableLink = ({ name, onSetActive }) => (
     offset={-300}
     // Custom prop ignoreOffsetOnScroll
     ignoreOffsetOnScroll
+    //
     onSetActive={onSetActive}
   >
     {`${name}`}

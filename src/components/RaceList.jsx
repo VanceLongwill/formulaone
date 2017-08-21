@@ -8,13 +8,6 @@ const RaceList = ({ races, worldChampion }) => (
     className="raceTable"
     textAlign="center"
     verticalAlign="middle"
-    // columns="equal"
-    // centered
-    // stretched
-    // stackable={true}
-    // divided={true}
-    // padded={false}
-    // container={true}
   >
     {/*  Head of Table */}
     <Grid.Row className="gridHeaders">

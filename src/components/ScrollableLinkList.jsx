@@ -7,6 +7,7 @@ import Scroll from 'react-scroll';
 let scroll = Scroll.animateScroll;
 
 // Define animation stops for scrollable years side component
+// Renders a wheel-link animation
 const animations = [
     {
     prop: 'opacity',

@@ -17,16 +17,18 @@
 * Responsive design
 * Minimalist / clean ux design
 * Mobile friendly
-
+* Animated transitions
+* Asynchronous lazy loading 
+* This model is highly scalable (ie with larger amounts of data to fetch - try setting a larger range of years in config.js)
 
 **Key functions**
 
 * Presents a list of Formula One world champions by year from the ergast API (prefetched)
 * When a year is selected, the ergast API is queried for the races from that year
 * Race data and the list of world champions are stored as state in a redux store which is connected to the root container component - App - via props.
-* Animated transitions
-* Asynchronous lazy loading 
-* This model is highly scalable
+* The names of the races by year and their respective winners is rendered as a table
+* If driver who won the race was also the world champion that year, the table row is highlighted light blue
+
 
 **Dependencies**
 

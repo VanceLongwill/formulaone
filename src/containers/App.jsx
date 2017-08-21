@@ -9,11 +9,11 @@ import { getArrayOfYears } from '../helpers/helperFunctions';
 import Scroll from 'react-scroll'; // Imports all Mixins
 
 // import all components
-import { Sidebar } from '../components/Sidebar';
 import { ScrollableContentSectionList } from '../components/ScrollableContentSectionList';
 import { ScrollableLinkList } from '../components/ScrollableLinkList';
 import { LoadingOverlay } from '../components/LoadingOverlay';
 import { FormulaOneIcon } from '../components/FormulaOneIcon';
+import { Sidebar } from '../components/Sidebar';
 
 // CSS
 import '../css/Scroll.css';

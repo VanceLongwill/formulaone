@@ -1,4 +1,5 @@
 span#FormulaOneIcon {
+  z-index: 100;
   color: var(--primary-light);
   display: block;
   position: fixed;

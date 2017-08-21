@@ -13,8 +13,8 @@ import { Sidebar } from '../components/Sidebar';
 import { ScrollableContentSectionList } from '../components/ScrollableContentSectionList';
 import { ScrollableLinkList } from '../components/ScrollableLinkList';
 import { LoadingOverlay } from '../components/LoadingOverlay';
-
 import { FormulaOneIcon } from '../components/FormulaOneIcon';
+
 // CSS
 import '../css/Scroll.css';
 import '../css/Main.css';
@@ -116,9 +116,9 @@ render() {
       //   return champ.year==selectedYear ? champ.worldChampion: null
       // })[0];
       return(
-      <div className="OuterContainer" >
+      <div className="OuterContainer" id="OuterContainer">
+        <FormulaOneIcon />
         <Sidebar>
-          <FormulaOneIcon />
           <ScrollableLinkList
             links={yearsArray}
             champions={champions}
@@ -127,7 +127,7 @@ render() {
           />
         </Sidebar>
 
-        <div className="InnerContainer" >
+        <div className="InnerContainer" id="InnerContainer">
 
           <ScrollableContentSectionList
             isFetching={isFetching}

@@ -14,8 +14,9 @@ body {
 
 
 .InnerContainer{
-    margin-left: 28vw;
-    padding-bottom: 200px;
+  width: 80%;
+  margin-left: 9vw;
+  padding-bottom: 200px;
 }
 
 .OuterContainer{

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 // import Scroll from 'react-scroll';
 import CustomLink from './CustomLink';
 

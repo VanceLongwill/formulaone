@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Scroll from 'react-scroll';
 import '../css/ScrollableContentSection.css';
 
-export const ScrollableContentSection = ({ year, champion, content, lastUpdated }) => (
+const ScrollableContentSection = ({ year, champion, content, lastUpdated }) => (
   <Scroll.Element name={`${year}`} className="element">
     <div className="linkSection">
       <div className="sectionHeader">
@@ -28,3 +28,4 @@ export const ScrollableContentSection = ({ year, champion, content, lastUpdated 
 
 
 // Add prop-types declaration
+export default ScrollableContentSection;

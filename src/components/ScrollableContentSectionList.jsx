@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ScrollableContentSection } from './ScrollableContentSection';
-import { RaceList } from '../components/RaceList';
-import { LoadingTable } from '../components/LoadingTable';
+import ScrollableContentSection from './ScrollableContentSection';
+import RaceList from '../components/RaceList';
+import LoadingTable from '../components/LoadingTable';
 
 const ScrollableContentSectionList = ({ racesByYear, seasons }) => (
   <div>

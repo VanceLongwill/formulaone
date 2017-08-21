@@ -68,9 +68,9 @@ class App extends Component {
 
 handleChange = (nextYear) => {
   const { dispatch } = this.props;
-  // console.log("IN HANDLE CHANGE")
-  // console.log(nextYear);
-  //
+   console.log("IN HANDLE CHANGE")
+  console.log(nextYear);
+
   dispatch(selectYear(nextYear));
   //  .then( () => // console.log("FINSIHED SELECT YEAR PROMISE"));
 }

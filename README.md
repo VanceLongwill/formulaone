@@ -50,6 +50,7 @@ Suggestions, improvements, and bug reports are more than welcome.
 * Make use of browser [localStorage API](https://developer.mozilla.org/en/docs/Web/API/Window/localStorage) for data persistence
 * Clean up 
 * Add PropTypes for better testing / debugging
+* Testing with Mocha / Istanbul
 
 ## How to install
 
@@ -75,7 +76,9 @@ Config file for app-wide variables
 * choose which year is fetched first & selected (`DEFAULT_ACTIVE_YEAR`)
  - Example: select the median year as default
 `const DEFAULT_ACTIVE_YEAR = ENDING_YEAR-(Math.round((ENDING_YEAR-STARTING_YEAR)/2)); `
- 
+
+
+* Set the API's root url (`ROOT_URL`)
 
 
 

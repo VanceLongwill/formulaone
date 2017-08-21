@@ -3,7 +3,7 @@
 
 [Formula One App](https://vancelongwill.github.io/formulaone/) *(live demo on GitHub pages)*
 
-**NOTE: Currently not working due to cross-origin request to API**
+**NOTE: Currently not working due to cross-origin request to API (browser security blocks the app)**
 
 `Mixed Content: The page at 'https://vancelongwill.github.io/formulaone/' was loaded over HTTPS, but requested an insecure resource 'http://ergast.com/api/f1/driverStandings/1.json?offset=55&limit=11'. This request has been blocked; the content must be served over HTTPS.`
 
@@ -66,7 +66,7 @@ Suggestions, improvements, and bug reports are more than welcome.
 
 `yarn start` or `npm start`
 
-## Config
+### Config
 `./src/config.js` 
 Config file for app-wide variables
 

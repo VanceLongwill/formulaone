@@ -116,7 +116,7 @@ render() {
       //   return champ.year==selectedYear ? champ.worldChampion: null
       // })[0];
       return(
-      <div className="OuterContainer" id="OuterContainer">
+      <div className="OuterContainer" /* id="OuterContainer" */>
         <FormulaOneIcon />
         <Sidebar>
           <ScrollableLinkList
@@ -127,7 +127,7 @@ render() {
           />
         </Sidebar>
 
-        <div className="InnerContainer" id="InnerContainer">
+        <div className="InnerContainer" /*id="InnerContainer"*/>
 
           <ScrollableContentSectionList
             isFetching={isFetching}

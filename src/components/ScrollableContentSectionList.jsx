@@ -14,9 +14,16 @@ export const ScrollableContentSectionList = ({ selectedYear, isFetching, racesBy
         if (thisYearsRaces){
           isEmpty = thisYearsRaces.length === 0;
         }
-
         return (
           isEmpty ?
+            isFetching ?
+              <ScrollableContentSection
+                key={`_${season.year}`}
+                year={season.year}
+                champion={`${season.worldChampion}`}
+                content={<LoadingTable />} //<RaceList races={racesByYear[season.year]} />
+              />
+            :
             <ScrollableContentSection
               key={`_${season.year}`}
               year={season.year}

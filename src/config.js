@@ -2,7 +2,7 @@ export const FIRST_DOCUMENTED_YEAR = 1950; // The earliest year available in the
 export const STARTING_YEAR = 2005; // The first year you want to be able to fetch data for
 export const ENDING_YEAR = 2015; // The last year you want to be able to fetch data for
 export const DEFAULT_ACTIVE_YEAR = 2005; //
-export const ROOT_URL = 'http://ergast.com/api/f1/'; // Root url of the ergast API
+export const ROOT_URL = 'https://ergast.com/api/f1/'; // Root url of the ergast API
 
 /*
 

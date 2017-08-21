@@ -21,18 +21,15 @@ const ScrollableContentSectionList = ({ racesByYear, seasons }) => (
               key={`_${season.year}`}
               year={season.year}
               champion={`${season.worldChampion}`}
-              content={<LoadingTable />}
-            /> :
+              content={<LoadingTable />} // <RaceList races={racesByYear[season.year]} />
+            />
+            :
             <ScrollableContentSection
               key={`_${season.year}`}
               year={season.year}
+              lastUpdated={new Date(thisYearsRaces.lastUpdated).toLocaleString()}
               champion={`${season.worldChampion}`}
-              content={
-                <RaceList
-                  races={thisYearsRaces.items}
-                  worldChampion={season.worldChampion}
-                />
-              }
+              content={<RaceList races={thisYearsRaces.items} worldChampion={season.worldChampion} />} // <RaceList races={racesByYear[season.year]} />
             />
         );
       })

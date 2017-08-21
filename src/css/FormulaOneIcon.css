@@ -12,6 +12,8 @@ span#FormulaOneIcon {
   padding-bottom: 8vh;
   padding-left: 2vh;
   padding-right: 2vh;
+  user-select: none;
+  cursor: pointer;
 }
 
 span#FormulaOneIcon img {

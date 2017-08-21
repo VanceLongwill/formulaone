@@ -14,7 +14,10 @@ const ScrollableContentSection = ({ year, champion, content, lastUpdated }) => (
       </div>
       {
         lastUpdated ?
-          <p className="lastUpdated"><span>Updated: </span>{lastUpdated}</p>
+          <p className="lastUpdated">
+            <span>Updated: </span>
+            {lastUpdated}
+          </p>
           : null
       }
       <Scroll.Element className="sectionContent element" name={`${year}_content`}>

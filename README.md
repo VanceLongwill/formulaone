@@ -6,7 +6,6 @@
 
 ---
 
-Suggestions, improvements, and bug reports are more than welcome. 
 
 *Current Version: 0.1*
 
@@ -22,38 +21,40 @@ Suggestions, improvements, and bug reports are more than welcome.
 
 **Key functions**
 
-* Presents a list of Formula One world champions by year from the ergast API
+* Presents a list of Formula One world champions by year from the ergast API (prefetched)
 * When a year is selected, the ergast API is queried for the races from that year
-* Races and champions are stored in a redux store which is connected to the root container component - App.
+* Race data and the list of world champions are stored as state in a redux store which is connected to the root container component - App - via props.
 * Animated transitions
+* Asynchronous lazy loading 
+* This model is highly scalable
 
 **Dependencies**
 
-* [Create React App](https://github.com/facebookincubator/create-react-app) was used as a boilerplate
+* [create-react-app](https://github.com/facebookincubator/create-react-app) was used as a boilerplate
 * [babel](https://github.com/babel/babel) including the transform-class-properties plugin for es6+ features & syntax
-* [remantic-ui-react](https://github.com/Semantic-Org/Semantic-UI-React) for responsive UI components
+* [semantic-ui-react](https://github.com/Semantic-Org/Semantic-UI-React) for responsive UI components
 * [react-view-pager](https://github.com/souporserious/react-view-pager) for animated transitions on the sidebar/carousel
-* [react-redux]()
-* [redux]()
-* [redux-thunk]() to provide middleware for async functions / promisers
-* [react-scroll]() to track scrolling position and create sections
-* [semantic-ui-css]() minimal stylings for semantic-ui components (Grid)
-* [halogen]() for animated loading components
+* [react-redux](https://github.com/reactjs/react-redux) for redux react bindings
+* [redux](http://redux.js.org/) as a react state container 
+* [redux-thunk](https://github.com/gaearon/redux-thunk) to provide middleware enabling async functions / promises
+* [react-scroll](https://github.com/fisshy/react-scroll) to track scrolling position
+* [semantic-ui-css](https://github.com/Semantic-Org/Semantic-UI-CSS) minimal stylings for semantic-ui components (Grid)
+* [halogen](https://github.com/yuanyan/halogen) for loading animations
 
 
 **Things I would do with more time**
 
 * Add BEM naming convention for CSS or move CSS styles inline
 * Make use of browser [localStorage API](https://developer.mozilla.org/en/docs/Web/API/Window/localStorage) for data persistence
-* Clean up 
 * Add PropTypes for better testing / debugging
 * Testing with Mocha / Istanbul
 
-## How to install
+## How to install 
+Assuming node / npm / yarn is already installed:  
 
-* Clone this repo
+* Clone this repo & move into project root directory
 
-`git clone https://github.com/VanceLongwill/formulaone.git` 
+`git clone https://github.com/VanceLongwill/formulaone.git && cd formulaone` 
 
 * Install node modules
 
@@ -62,6 +63,8 @@ Suggestions, improvements, and bug reports are more than welcome.
 * Start the server 
 
 `yarn start` or `npm start`
+
+* Go to `https://localhost:3000`
 
 ### Config
 `./src/config.js` 

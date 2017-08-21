@@ -75,7 +75,7 @@ scrollSpy.update();
 }
 
 componentWillUnmount() {
-  // Removes scroll event listeners when components unmounts
+  // // Removes scroll event listeners when components unmounts
   Events.scrollEvent.remove('begin');
   Events.scrollEvent.remove('end');
 }

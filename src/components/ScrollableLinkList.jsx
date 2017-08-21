@@ -39,15 +39,15 @@ export class ScrollableLinkList extends Component{
     activeLink: this.props.activeLink,
   }
   componentDidMount(){
-    // let { activeYear } = this.props;
-    // this.handleSelectLink(activeYear);
+    // let { activeLink } = this.props;
+    // this.handleSelectLink(activeLink);
     this.handleSelectLink(this.state.activeLink);
     //Scroll.animateScroll.scrollTo(this.state.activeLink);
     //this.track.scrollTo(this.props.links.indexOf(Number(link)));
   }
   handleViewChange = (link) => {
     this.setState({
-      activeYear: this.props.links[link[0]],
+      activeLink: this.props.links[link[0]],
     });
     //console.log("Set link to "+this.props.links[link[0]] );
     //this.props.onSelectLink(this.props.links[link[0]]);
@@ -57,16 +57,20 @@ export class ScrollableLinkList extends Component{
    if (link !== undefined){
 
      this.setState({
-       activeYear: link,
+       activeLink: link,
      });
      this.track.scrollTo(this.props.links.indexOf(Number(link)));
+   } else {
+     console.log("LINK IS UNDEF")
    }
   }
 
   // Fires props after animation settles
   fireProps = () => {
-    if (this.state.activeYear!==undefined){
-      this.props.onSelectLink(this.state.activeYear);
+    if (this.state.activeLink!==undefined){
+      this.props.onSelectLink(this.state.activeLink);
+    } else {
+      console.log("ACTIVE LINK UNDEFINED")
     }
   }
   render() {
@@ -81,7 +85,7 @@ export class ScrollableLinkList extends Component{
             viewsToShow={10}
             axis="y"
             align={0.5}
-            //currentView={this.state.activeYear}
+            //currentView={this.state.activeLink}
             onViewChange={this.handleViewChange}
             animations={animations}
             className="track track-y"

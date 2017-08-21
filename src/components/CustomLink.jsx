@@ -106,7 +106,6 @@ const customScroller = Object.assign({}, defaultScroller, {
 
       animateScroll.animateTopScroll(scrollOffset, props, to, target);
   }
-
 });
 
 export const CustomLink = Helpers.Scroll(CustomLinkClass, customScroller);

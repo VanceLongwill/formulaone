@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { push as Menu } from 'react-burger-menu';
+// React-burger-menu provides a simple side menu/drawer component, also hideable & customisable
 import '../css/Sidebar.css';
 
 const defaultStyles = {

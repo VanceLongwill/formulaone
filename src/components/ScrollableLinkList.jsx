@@ -41,7 +41,8 @@ export class ScrollableLinkList extends Component{
   componentDidMount(){
     // let { activeYear } = this.props;
     // this.handleSelectLink(activeYear);
-    this.handleSelectLink(this.state.activeYear);
+    this.handleSelectLink(this.state.activeLink);
+    //Scroll.animateScroll.scrollTo(this.state.activeLink);
     //this.track.scrollTo(this.props.links.indexOf(Number(link)));
   }
   handleViewChange = (link) => {

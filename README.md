@@ -64,8 +64,19 @@ Suggestions, improvements, and bug reports are more than welcome.
 
 * Start the server 
 
-`yarn start` or `npm run start`
+`yarn start` or `npm start`
 
+## Config
+`./src/config.js` 
+Config file for app-wide variables
+
+ Can be used to:
+ 
+* fetch a different range of years' data (`STARTING_YEAR`, `ENDING_YEAR`)
+* choose which year is fetched first & selected (`DEFAULT_ACTIVE_YEAR`)
+ - Example: select the median year as default
+`const DEFAULT_ACTIVE_YEAR = ENDING_YEAR-(Math.round((ENDING_YEAR-STARTING_YEAR)/2)); `
+ 
 
 
 

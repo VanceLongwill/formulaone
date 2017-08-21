@@ -64,7 +64,12 @@ scrollSpy.update();
   // console.log('selected year');
   // console.log(selectedYear);
   dispatch(fetchChampionsIfNeeded(selectedYearRange))
-  scroll.scrollToTop(); //(selectedYear);
+   //(selectedYear);
+   if (this.props.isFetching) {
+     scroll.scrollToTop();
+   } else {
+     scroll.scrollTo(selectedYear);
+   }
   scrollSpy.update();
   dispatch(fetchRacesIfNeeded(selectedYear))
 }
@@ -88,6 +93,7 @@ handleChange = nextYear => {
   const { dispatch } = this.props;
   // console.log("IN HANDLE CHANGE")
   // console.log(nextYear);
+  //
   dispatch(selectYear(nextYear))
   //  .then( () => // console.log("FINSIHED SELECT YEAR PROMISE"));
 
@@ -105,6 +111,7 @@ render() {
     if (isWaiting){
       return (initialFetching ? <LoadingOverlay /> : <h2>Empty.</h2>);
     } else {
+
       // let currentChamp = champions.map((champ) => {
       //   return champ.year==selectedYear ? champ.worldChampion: null
       // })[0];
